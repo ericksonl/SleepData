@@ -32,7 +32,8 @@ cat("Mean Time in Bed (Seconds): ", mean(TimeInBed),
     "\nMean Time Asleep (Seconds): ", mean(TimeAsleep),
     "\nMean Temperature (F): ", mean(Temperature),
     "\nMean Alarm (Y/N): ", mean(Alarm),
-    "\nMean Steps: ", mean(Steps))
+    "\nMean Steps: ", mean(Steps),
+    "\nMean SleepQuality: ", mean(SleepQuality))
 
 # Conduct a linear regression again this time using only the five significant 
 # predictors found in the prior problem. 
@@ -99,11 +100,11 @@ hist(SleepQuality-yhat, probability = TRUE)
 #     respect to the five predictors in the regression model.
 #    ---------------------------------------------------------------------------
 
-new_data <- data.frame(TimeInBed = mean(TimeInBed),
-                       TimeAsleep = mean(TimeAsleep),
-                       Temperature = mean(Temperature),
-                       Alarm = mean(Alarm),
-                       Steps = mean(Steps))
+new_data <- data.frame(TimeInBed = mean(sleep_data$TimeInBed),
+                       TimeAsleep = mean(sleep_data$TimeAsleep),
+                       Temperature = mean(sleep_data$Temperature),
+                       Alarm = mean(sleep_data$Alarm),
+                       Steps = mean(sleep_data$Steps))
 
 predicted_sleep_quality <- predict(model2, newdata = new_data)
 
