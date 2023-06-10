@@ -66,6 +66,8 @@ To assess the overall significance of the regression model, I conducted an F-tes
 
 Finally I created a histogram of the residuals to depict the differences between the predicted and actual values of SleepQuality. The histogram forms a bell-shaped curve, suggesting that the residuals follow a normal distribution. This indicates a good fit of the regression model to the data.
 
+![SleepQualityHistogram](https://github.com/ericksonl/SleepData/blob/main/SleepQualityHistogram.png)
+
 ### Prediction
 Finally, I could use my model to predict Sleep Quality. Assuming we take an average average person with respect to the five predictors in the regression model, we find that their sleep quality will be **67.57%** 
 
