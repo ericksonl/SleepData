@@ -68,7 +68,7 @@ Finally I created a histogram of the residuals to depict the differences between
 
 <img src="https://github.com/ericksonl/SleepData/blob/main/SleepQualityHistogram.png" alt="drawing" width="500"/>
 
-### Prediction
+### Final Predictions
 Finally, I could use my model to predict Sleep Quality. Assuming we take an average average person with respect to the five predictors in the regression model, we find that their sleep quality will be **67.57%** 
 
 ## Data Used in this Project
