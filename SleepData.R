@@ -112,7 +112,7 @@ average_sleep_quality <- predicted_sleep_quality
 
 
 #-------------------------
-rm(data, model, model2, sleep_data, test_data, train_data, df1, df2, F, 
-   file_path, k, n, pvalue, SSE, SSE_percent, SSR, SSR_percent, test_index, 
-   train_index, TSS, yhat, m1, m2, m3, m4, m5, predicted_values, m_df, new_data, Alarm, Snore)
+rm(data, model, model2, new_data, sleep_data, test_data, train_data, df1, df2, 
+   F, file_path, k, n, predicted_sleep_quality, pvalue, SSE, SSE_percent, SSR, 
+   SSR_percent, test_index, train_index, TSS, yhat, average_sleep_quality)
 #-------------------------
