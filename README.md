@@ -15,7 +15,7 @@ I have been collecting my sleep data since July of 2016. Using the app SleepCycl
 ## Basic Findings
 
 In addition to not walking nearly enough on average (I don't have a smart watch, so steps are recorded with my phone. When I don't carry my phone with me, no steps are tracked so don't judge me too hard), I discovered that my sleep quality is... not great.
-On average, I spend 6 hours 31 minutes and 58 seconds in bed. 5 hours 52 minutes and 4 seconds of that time I spend asleep. The average temperature outside is 43.37 * Fahrenheit (chilly!). I set an alarm 70.81% of the time, take an average of 2512.071 steps in the day (again, no judgment), and have an average sleep quality of 67.57%.
+On average, I spend **6 hours 31 minutes and 58 seconds** in bed. **5 hours 52 minutes and 4 seconds** of that time I spend asleep. The average temperature outside is **43.37** °Fahrenheit (chilly!). I set an alarm **70.81%** of the time, take an average of **2512.071** steps in the day (again, no judgment), and have an average sleep quality of **67.57%**.
 
 ## Process
 ### Original Dataset Summary
@@ -37,7 +37,7 @@ I began with a summary of the dataset's variables and their respective ranges, q
 | Temperature       | -3.50  | 32.00   | 41.00  | 43.37  | 52.30   | 86.70   |
 
 ### Training Data
-I built a predictive model with SleepQuality as the dependent variable using 65% of the original dataset. The goal was to identify the top predictors that could help predict SleepQuality. Here is the summary of the predictive model, which shows us the significant predictors based on their P-Value. These include Time in Bed, Time Asleep, Temperature, Alarm and Steps. These predictors are what I used to predict SleepQuality.
+I built a predictive model with SleepQuality as the dependent variable using **65%** of the original dataset. The goal was to identify the top predictors that could help predict SleepQuality. Here is the summary of the predictive model, which shows us the significant predictors based on their P-Value. These include Time in Bed, Time Asleep, Temperature, Alarm and Steps. These predictors are what I used to predict SleepQuality.
 
 | Variable         	| Estimate   	| Std. Error 	| t value 	| Pr(>\|t\|)   	|
 |------------------	|------------	|------------	|---------	|--------------	|
@@ -56,11 +56,11 @@ I built a predictive model with SleepQuality as the dependent variable using 65%
 
 ### Performance Metrics
 In addition to identifying the top predictors, I calculated additional metrics to evaluate the performance of the predictive model. These metrics include:
-* Total Sum of Squares (TSS): **875,662.8
-* Sum of Squares Regression (SSR): **762,789.7
-* Sum of Squares Error (SSE): **112,873.2
+* Total Sum of Squares (TSS): **875,662.8**
+* Sum of Squares Regression (SSR): **762,789.7**
+* Sum of Squares Error (SSE): **112,873.2**
 
-The regression model successfully explains approximately 87.11% of the total variance in SleepQuality, as indicated by the Proportion of Total Sum of Squares Explained by Regression (SSR/TSS). This high percentage suggests that the model is fairly effective. However, there is still approximately 12.89% of the differences in SleepQuality that remain unexplained, represented by the Sum of Squares Error (SSE).
+The regression model successfully explains approximately 87.11% of the total variance in SleepQuality, as indicated by the Proportion of Total Sum of Squares Explained by Regression (SSR/TSS). This high percentage suggests that the model is fairly effective. However, there is still approximately **12.89%** of the differences in SleepQuality that remain unexplained, represented by the Sum of Squares Error (SSE).
 
 To assess the overall significance of the regression model, I conducted an F-test, resulting in an F-value of **2626.134** and a corresponding p-value of **0**. This indicates that the model is statistically significant, suggesting that the predictors used in the model collectively have a substantial impact on SleepQuality.
 
