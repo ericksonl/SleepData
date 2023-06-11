@@ -67,7 +67,7 @@ To assess the overall significance of the regression model, I conducted an F-tes
 
 Finally I created a histogram of the residuals to depict the differences between the predicted and actual values of SleepQuality. The histogram forms a bell-shaped curve, suggesting that the residuals follow a normal distribution. This indicates a good fit of the regression model to the data.
 
-<img src="https://github.com/ericksonl/SleepData/blob/main/SleepQualityHistogram.png" alt="drawing" width="500"/>
+<img src="https://github.com/ericksonl/SleepData/blob/main/Graphs/SleepQualityHistogram.png" alt="drawing" width="500"/>
 
 ### Predictions
 Finally, I could use my model to predict Sleep Quality. Assuming an average person with respect to the five predictors in the regression model, we find that their sleep quality will be **67.57%.** 
@@ -102,16 +102,16 @@ The model predicts my sleep quality will be **67.08%.**
 I was also interested in exploring the relationship between Sleep Quality and its top predictors through visualization. I have added the plots below that show these relationships.
 
 <p float="left">
-  <img src="https://github.com/ericksonl/SleepData/blob/main/TimeInBedVSSleepQuality.png" alt="drawing" width="500"/>
-  <img src="https://github.com/ericksonl/SleepData/blob/main/TimeAsleepVSSleepQuality.png" alt="drawing" width="500"/>
+  <img src="https://github.com/ericksonl/SleepData/blob/main/Graphs/TimeInBedVSSleepQuality.png" alt="Time in Bed vs Sleep Quality" width="400"/>
+  <img src="https://github.com/ericksonl/SleepData/blob/main/Graphs/TimeAsleepVSSleepQuality.png" alt="Time Asleep vs Sleep Quality" width="400"/>
 </p>
 
 <p float = "left">
-   <img src="https://github.com/ericksonl/SleepData/blob/main/TemperatureVSSleepQuality.png" alt="drawing" width="500"/>
-   <img src="https://github.com/ericksonl/SleepData/blob/main/AlarmVSSleepQuality.png" alt="drawing" width="500"/>
+   <img src="https://github.com/ericksonl/SleepData/blob/main/Graphs/TemperatureVSSleepQuality.png" alt="Temperature vs Sleep Quality" width="400"/>
+   <img src="https://github.com/ericksonl/SleepData/blob/main/Graphs/AlarmVSSleepQuality.png" alt="Alarm vs Sleep Quality" width="400"/>
 </p>
 
-<img align="center" width="500" src="https://github.com/ericksonl/SleepData/blob/main/StepsVSSleepQuality.png" alt="drawing"/>
+<img align="center" width="500" src="https://github.com/ericksonl/SleepData/blob/main/Graphs/StepsVSSleepQuality.png" alt="Steps vs Sleep Quality"/>
 
 ## Data Used in this Project
 * SleepQuality (Percent)
