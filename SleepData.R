@@ -155,15 +155,66 @@ cat("Predicted Sleep Quality Given Metrics: ", predict(model2, newdata = pred3))
 
 
 #    ---------------------------------------------------------------------------
-#     Create a scatter plot of Time Asleep vs Sleep Quality
+#     Create scatter plots of top predictors vs Sleep Quality
 #    ---------------------------------------------------------------------------
 
+ggplot(sleep_data, aes(x = TimeInBed, y = SleepQuality)) +
+  geom_point(size = 1) +
+  xlab("Time in Bed") +
+  ylab("SleepQuality") +
+  ggtitle("Scatter Plot of Time in Bed (S) vs. Sleep Quality (%)") +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(face = "bold", size = 15, color = "blue"),
+    axis.title = element_text(size = 12, color = "red"),
+    axis.text = element_text(size = 10),
+    legend.position = "top",
+  )
 
 ggplot(sleep_data, aes(x = TimeAsleep, y = SleepQuality)) +
   geom_point(size = 1) +
   xlab("Time Asleep") +
   ylab("SleepQuality") +
   ggtitle("Scatter Plot of Time Asleep (S) vs. Sleep Quality (%)") +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(face = "bold", size = 15, color = "blue"),
+    axis.title = element_text(size = 12, color = "red"),
+    axis.text = element_text(size = 10),
+    legend.position = "top",
+  )
+
+ggplot(sleep_data, aes(x = Temperature, y = SleepQuality)) +
+  geom_point(size = 1) +
+  xlab("Temperature") +
+  ylab("SleepQuality") +
+  ggtitle("Scatter Plot of Temperature (F) vs. Sleep Quality (%)") +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(face = "bold", size = 15, color = "blue"),
+    axis.title = element_text(size = 12, color = "red"),
+    axis.text = element_text(size = 10),
+    legend.position = "top",
+  )
+
+ggplot(sleep_data, aes(x = Alarm, y = SleepQuality)) +
+  geom_point(size = 1) +
+  xlab("Alarm") +
+  ylab("SleepQuality") +
+  ggtitle("Scatter Plot of Alarm vs. Sleep Quality (%)") +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(face = "bold", size = 15, color = "blue"),
+    axis.title = element_text(size = 12, color = "red"),
+    axis.text = element_text(size = 10),
+    legend.position = "top",
+  )
+
+ggplot(sleep_data, aes(x = Steps, y = SleepQuality)) +
+  geom_point(size = 1) +
+  xlab("Steps") +
+  ylab("SleepQuality") +
+  ggtitle("Scatter Plot of Steps vs. Sleep Quality (%)") +
   theme_minimal() +
   theme(
     plot.title = element_text(face = "bold", size = 15, color = "blue"),
