@@ -10,12 +10,13 @@ I have been collecting my sleep data since July of 2016. Using the app SleepCycl
 - [Training Data](#training-data)
 - [Performance Metrics](#performance-metrics)
 - [Final Predictions](#final-predictions)
+- [Data Visualization](#data-visualization)
 - [Data Used in this Project](#data-used-in-this-project)
 
 ## Basic Findings
 
 In addition to not walking nearly enough on average (I don't have a smart watch, so steps are recorded with my phone. When I don't carry my phone with me, no steps are tracked so don't judge me too hard), I discovered that my sleep quality is... not great.
-On average, I spend **6 hours 31 minutes and 58 seconds** in bed. **5 hours 52 minutes and 4 seconds** of that time I spend asleep. The average temperature outside is **43.37** °Fahrenheit (chilly!). I set an alarm **70.81%** of the time, take an average of **2512.071** steps in the day (again, no judgment), and have an average sleep quality of **67.57%**.
+On average, I spend **6 hours 31 minutes and 58 seconds** in bed. **5 hours 52 minutes and 4 seconds** of that time I spend asleep. The average temperature outside is **43.37°** Fahrenheit (chilly!). I set an alarm **70.81%** of the time, take an average of **2512.071** steps in the day (again, no judgment), and have an average sleep quality of **67.57%**.
 
 ## Process
 ### Original Dataset Summary
@@ -68,8 +69,49 @@ Finally I created a histogram of the residuals to depict the differences between
 
 <img src="https://github.com/ericksonl/SleepData/blob/main/SleepQualityHistogram.png" alt="drawing" width="500"/>
 
-### Final Predictions
-Finally, I could use my model to predict Sleep Quality. Assuming we take an average average person with respect to the five predictors in the regression model, we find that their sleep quality will be **67.57%** 
+### Predictions
+Finally, I could use my model to predict Sleep Quality. Assuming an average person with respect to the five predictors in the regression model, we find that their sleep quality will be **67.57%.** 
+Additionally, I have included some other predictions using pre-selected values:
+
+#### Prediction 1
+* TimeInBed = 28800 (8 Hours)
+* TimeAsleep = 28800 (8 Hours)
+* Temperature = 70
+* Alarm = 1 (Alarm was set)
+* Steps = 10000
+The model predicts my sleep quality will be **85.46%.**
+ 
+#### Prediction 2
+* TimeInBed = 18000 (5 Hours)
+* TimeAsleep = 14400 (4 Hours)
+* Temperature = 40
+* Alarm = 1 (Alarm was set)
+* Steps = 2000
+The model predicts my sleep quality will be **52.34%.**
+
+#### Prediction 3
+* TimeInBed = 18000 (6.5 Hours)
+* TimeAsleep = 14400 (6 Hours)
+* Temperature = 52.56
+* Alarm = 0 (Alarm was not set)
+* Steps = 4322
+The model predicts my sleep quality will be **67.08%.**
+
+## Data Visualization
+
+I was also interested in exploring the relationship between Sleep Quality and its top predictors through visualization. I have added the plots below that show these relationships.
+
+<p float="left">
+  <img src="https://github.com/ericksonl/SleepData/blob/main/TimeInBedVSSleepQuality.png" alt="drawing" width="500"/>
+  <img src="https://github.com/ericksonl/SleepData/blob/main/TimeAsleepVSSleepQuality.png" alt="drawing" width="500"/>
+</p>
+
+<p float = "left">
+   <img src="https://github.com/ericksonl/SleepData/blob/main/TemperatureVSSleepQuality.png" alt="drawing" width="500"/>
+   <img src="https://github.com/ericksonl/SleepData/blob/main/AlarmVSSleepQuality.png" alt="drawing" width="500"/>
+</p>
+
+<img align="center" width="500" src="https://github.com/ericksonl/SleepData/blob/main/StepsVSSleepQuality.png" alt="drawing"/>
 
 ## Data Used in this Project
 * SleepQuality (Percent)
