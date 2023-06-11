@@ -101,11 +101,19 @@ The model predicts my sleep quality will be **67.08%.**
 
 I was also interested in exploring the relationship between Sleep Quality and its top predictors through visualization. I have added the plots below that show these relationships.
 
+| Time in Bed vs Sleep Quality                                         | Time Asleep vs Sleep Quality                                         |
+|----------------------------------------------------------------------|----------------------------------------------------------------------|
+| ![Time in Bed vs Sleep Quality](Graphs/TimeInBedVSSleepQuality.png)  | ![Time in Bed vs Sleep Quality](Graphs/TimeAsleepVSSleepQuality.png) |
+
+| Temperature vs Sleep Quality                                           | Steps vs Sleep Quality                                               |
+|------------------------------------------------------------------------|----------------------------------------------------------------------|
+| ![Time in Bed vs Sleep Quality](Graphs/TemperatureVSSleepQuality.png)  | ![Time in Bed vs Sleep Quality](Graphs/StepsVSSleepQuality.png)      |
+
+
 <div align="center">
   <img src="https://github.com/ericksonl/SleepData/blob/main/Graphs/TimeInBedVSSleepQuality.png" alt="Time in Bed vs Sleep Quality" width="500"/>
   <img src="https://github.com/ericksonl/SleepData/blob/main/Graphs/TimeAsleepVSSleepQuality.png" alt="Time Asleep vs Sleep Quality" width="500"/>
   <img src="https://github.com/ericksonl/SleepData/blob/main/Graphs/TemperatureVSSleepQuality.png" alt="Temperature vs Sleep Quality" width="500"/>
-  <img src="https://github.com/ericksonl/SleepData/blob/main/Graphs/AlarmVSSleepQuality.png" alt="Alarm vs Sleep Quality" width="500"/>
   <img src="https://github.com/ericksonl/SleepData/blob/main/Graphs/StepsVSSleepQuality.png" alt="Steps vs Sleep Quality" width="500"/>
 </div>
  
