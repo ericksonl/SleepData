@@ -1,6 +1,3 @@
-library(ggplot2)
-library(MASS)
-
 file_path <- "C:/Users/Liam/Desktop/Files/Code/GitHubRepos/SleepData/sleepdataGLM.csv"
 data <- read.csv(file_path)
 sleep_data <- as.data.frame(data)
@@ -17,16 +14,12 @@ nrow(sleep_data)
 
 set.seed(123)
 train_index <- sample(row.names(sleep_data), .65 * nrow(sleep_data))
-length(train_index)
 train_data <- sleep_data[train_index,]
 
-
 test_index <- setdiff(row.names(sleep_data), train_index)
-length(test_index)
 test_data <- sleep_data[test_index,]
 
 model <- glm(SleepQuality ~., family=binomial(), data=train_data)
-summary(model)
 
 phat <- predict(model, test_data, type = 'response')
 
@@ -46,18 +39,19 @@ for (alpha in alpha.range) {
   FP[alpha * num.intervals] <- sum(test_data$SleepQuality == 0 & phat > alpha)
 }
 
-(TP + FN) / nrow(test_data) # Correct classification rate
-TN / (TN + TP) # Type I error rate
-FP / (FN + FP) # Type II error rate
+normalized_FP <- FP / max(FP)
+normalized_TP <- TP / max(TP) 
 
-plot(x = FP, y = TP, type='l')
+plot(x = normalized_FP, y = normalized_TP, type = 'l', xlim = c(0, 1), 
+     ylim = c(0, 1), xlab = "False Positive Rate (FPR)",
+     ylab = "True Positive Rate (TPR)")
 
 TP_rate <- TP / (TP + FP)
 AUC <- mean(TP_rate[-1000])
 cat("AUC: ", AUC, "\n")
 
 #-------------------------
-rm(data, model, model2, new_data, sleep_data, test_data, train_data, df1, df2, 
-   F, file_path, k, n, predicted_sleep_quality, pvalue, SSE, SSE_percent, SSR, 
-   SSR_percent, test_index, train_index, TSS, yhat, pred1, pred2, pred3)
+rm(data, model, sleep_data, test_data, train_data, alpha, alpha.range, AUC, 
+   delta, file_path, FN, FP, normalized_FP, normalized_TP, num.intervals, phat,
+   test_index, TN, TP, TP_rate, train_index)
 #-------------------------
