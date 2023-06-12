@@ -87,6 +87,7 @@ Additionally, I have included some other predictions using pre-selected values:
 * Temperature = 70
 * Alarm = 1 (Alarm was set)
 * Steps = 10000
+
 The model predicts my sleep quality will be **85.46%.**
  
 #### Prediction 2
@@ -95,6 +96,7 @@ The model predicts my sleep quality will be **85.46%.**
 * Temperature = 40
 * Alarm = 1 (Alarm was set)
 * Steps = 2000
+
 The model predicts my sleep quality will be **52.34%.**
 
 #### Prediction 3
@@ -103,6 +105,7 @@ The model predicts my sleep quality will be **52.34%.**
 * Temperature = 52.56
 * Alarm = 0 (Alarm was not set)
 * Steps = 4322
+
 The model predicts my sleep quality will be **67.08%.**
 
 ## Data Visualization
