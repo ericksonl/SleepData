@@ -119,7 +119,7 @@ I was also interested in exploring the relationship between Sleep Quality and it
 | ![Time in Bed vs Sleep Quality](Graphs/TemperatureVSSleepQuality.png)  | ![Time in Bed vs Sleep Quality](Graphs/StepsVSSleepQuality.png)      |
 
 ## ROC Curve
-By converting the Sleep Quality data to binary values (1's and 0's), I applied a generalized linear model to predict Sleep Quality. Specifically, I categorized sleep quality as 1 for values greater than or equal to 70, and as 0 for values below 70. With 65% of the original dataset, I developed a predictive model with Sleep Quality as the dependent variable. Using this model, I constructed an ROC curve from scratch to evaluate its performance. The calculated Area under the Curve (AUC) is 0.8464055, indicating that the model exhibits reasonably good discriminatory power.
+By converting the Sleep Quality data to binary values (1's and 0's), I applied a generalized linear model to predict Sleep Quality. Specifically, I categorized sleep quality as **1** for values **greater than or equal to 70**, and as **0** for values **below 70**. With **65%** of the original dataset, I developed a predictive model with Sleep Quality as the dependent variable. Using this model, I constructed an ROC curve from scratch to evaluate its performance. The calculated Area under the Curve (AUC) is **0.8464055**, indicating that the model exhibits reasonably good discriminatory power.
 
 Here is the ROC curve:
 
