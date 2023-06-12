@@ -1,26 +1,26 @@
 # Analysis of Sleep Data
-
 I have been collecting my sleep data since July of 2016. Using the app SleepCycle, each night records several types of data (which you can read about in [SleepCycle's Privacy Policy](https://www.sleepcycle.com/privacy-policy-2021/#:~:text=When%20using%20the%20Sleep%20Cycle,as%20snoring%20or%20other%20noises)). For this project, I focused only on 12 of the data values collected. Specifically I was interested in Sleep Quality, how it was affected, and if I could predict what my future sleep quality would be like. 
 
 ## Table of Contents
-
-- [Basic Findings](#my-findings)
+- [Basic Findings](#basic-findings)
 - [Process](#process)
 - [Original Dataset Summary](#original-dataset-summary)
 - [Training Data](#training-data)
 - [Performance Metrics](#performance-metrics)
 - [Final Predictions](#final-predictions)
 - [Data Visualization](#data-visualization)
+- [ROC Curve](#roc-curve)
 - [Data Used in this Project](#data-used-in-this-project)
 
 ## Basic Findings
-
 In addition to not walking nearly enough on average (I don't have a smart watch, so steps are recorded with my phone. When I don't carry my phone with me, no steps are tracked so don't judge me too hard), I discovered that my sleep quality is... not great.
 On average, I spend **6 hours 31 minutes and 58 seconds** in bed. **5 hours 52 minutes and 4 seconds** of that time I spend asleep. The average temperature outside is **43.37°** Fahrenheit (chilly!). I set an alarm **70.81%** of the time, take an average of **2512.071** steps in the day (again, no judgment), and have an average sleep quality of **67.57%**.
 
 ## Process
 ### Original Dataset Summary
 I began with a summary of the dataset's variables and their respective ranges, quartiles, and descriptive statistics. This gives gave me an idea of the kind of data I was dealing with. 
+
+<div align="center">
 
 | Variable          | Min.   | 1st Qu. | Median | Mean   | 3rd Qu. | Max.    |
 |-------------------|--------|---------|--------|--------|---------|---------|
@@ -37,8 +37,12 @@ I began with a summary of the dataset's variables and their respective ranges, q
 | SnoreTime         | 0.0    | 0.0     | 0.0    | 197.4  | 180.0   | 6249.0  |
 | Temperature       | -3.50  | 32.00   | 41.00  | 43.37  | 52.30   | 86.70   |
 
-### Training Data
+</div>
+ 
+ ### Training Data
 I built a predictive model with SleepQuality as the dependent variable using **65%** of the original dataset. The goal was to identify the top predictors that could help predict SleepQuality. Here is the summary of the predictive model, which shows us the significant predictors based on their P-Value. These include Time in Bed, Time Asleep, Temperature, Alarm and Steps. These predictors are what I used to predict SleepQuality.
+
+<div align="center">
 
 | Variable         	| Estimate   	| Std. Error 	| t value 	| Pr(>\|t\|)   	|
 |------------------	|------------	|------------	|---------	|--------------	|
@@ -55,6 +59,8 @@ I built a predictive model with SleepQuality as the dependent variable using **6
 | SnoreTime        	| -1.321e-03 	| 4.457e-04  	| -2.964  	| 0.003094 **  	|
 | Temperature      	| 6.014e-02  	| 1.619e-02  	| 3.714   	| 0.000213 *** 	|
 
+</div>
+                                                                    
 ### Performance Metrics
 In addition to identifying the top predictors, I calculated additional metrics to evaluate the performance of the predictive model. These metrics include:
 * Total Sum of Squares (TSS): **875,662.8**
@@ -67,9 +73,11 @@ To assess the overall significance of the regression model, I conducted an F-tes
 
 Finally I created a histogram of the residuals to depict the differences between the predicted and actual values of SleepQuality. The histogram forms a bell-shaped curve, suggesting that the residuals follow a normal distribution. This indicates a good fit of the regression model to the data.
 
-<img src="https://github.com/ericksonl/SleepData/blob/main/Graphs/SleepQualityHistogram.png" alt="drawing" width="500"/>
-
-### Predictions
+<div align="center">
+   <img src="https://github.com/ericksonl/SleepData/blob/main/Graphs/SleepQualityHistogram.png" alt="drawing" width="500"/>
+</div>
+ 
+### Final Predictions
 Finally, I could use my model to predict Sleep Quality. Assuming an average person with respect to the five predictors in the regression model, we find that their sleep quality will be **67.57%.** 
 Additionally, I have included some other predictions using pre-selected values:
 
@@ -98,7 +106,6 @@ The model predicts my sleep quality will be **52.34%.**
 The model predicts my sleep quality will be **67.08%.**
 
 ## Data Visualization
-
 I was also interested in exploring the relationship between Sleep Quality and its top predictors through visualization. I have added the plots below that show these relationships.
 
 <sup> Note: The README does not include the graph of Alarm vs Sleep Quality due to Alarm being a boolean variable, which limits its potential to provide meaningful insights in the visualization. </sup> 
@@ -110,7 +117,20 @@ I was also interested in exploring the relationship between Sleep Quality and it
 | Temperature vs Sleep Quality                                           | Steps vs Sleep Quality                                               |
 |------------------------------------------------------------------------|----------------------------------------------------------------------|
 | ![Time in Bed vs Sleep Quality](Graphs/TemperatureVSSleepQuality.png)  | ![Time in Bed vs Sleep Quality](Graphs/StepsVSSleepQuality.png)      |
+
+## ROC Curve
+By converting the Sleep Quality data to binary values (1's and 0's), I applied a generalized linear model to predict Sleep Quality. Specifically, I categorized sleep quality as 1 for values greater than or equal to 70, and as 0 for values below 70. With 65% of the original dataset, I developed a predictive model with Sleep Quality as the dependent variable. Using this model, I constructed an ROC curve from scratch to evaluate its performance. The calculated Area under the Curve (AUC) is 0.8464055, indicating that the model exhibits reasonably good discriminatory power.
+
+Here is the ROC curve:
+
+<div align="center">
+
+  <img src="https://github.com/ericksonl/SleepData/blob/main/Graphs/ROCCurve.png" alt="ROC Curve" width="500"/>
  
+ </div>
+
+By examing the shape of this ROC curve and the value of the AUC, we can tell the model demonstrates strong performance. This result signifies a good level of accuracy in predicting sleep quality based on the provided data.
+
 ## Data Used in this Project
 * SleepQuality (Percent)
 * Regularity (Percent)
