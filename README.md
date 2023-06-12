@@ -1,5 +1,5 @@
 # Analysis of Sleep Data
-I have been collecting my sleep data since July of 2016. [SleepCycle](https://www.sleepcycle.com/) (available on iOS and Android) tracks your sleep using your phone's microphone (which you can read about in [SleepCycle's Privacy Policy](https://www.sleepcycle.com/privacy-policy-2021/#:~:text=When%20using%20the%20Sleep%20Cycle,as%20snoring%20or%20other%20noises)) and records several different types of data. For this project, I focused on 12 of the data values collected. Specifically I was interested in Sleep Quality, how it was affected, and if I could predict what my future sleep quality would be like. 
+Since July of 2016, I have been collecting my sleep data using the [SleepCycle](https://www.sleepcycle.com/) app, available on both iOS and Android. This app uses the microphone in your phone to track various aspects of your sleep (which you can read about in [SleepCycle's Privacy Policy](https://www.sleepcycle.com/privacy-policy-2021/#:~:text=When%20using%20the%20Sleep%20Cycle,as%20snoring%20or%20other%20noises)). Among the multitude of data points captured by the app, I narrowed my focus to 12 specific variables. In particular, I was interested in Sleep Quality, exploring the influencing factors, and attempting to develop a predictive model for future sleep quality. 
 
 ## Table of Contents
 - [Basic Findings](#basic-findings)
